@@ -1,0 +1,36 @@
+{
+  "name": "typescript-solid",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:DevDBreno/typescript-solid.git",
+  "author": "DevDBreno <dbrenoti@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "format:write": "prettier --write \"src/**/*.ts\"",
+    "lint:fix": "eslint \"src/**/*.ts\" --fix"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^14.10.2",
+    "@typescript-eslint/eslint-plugin": "^4.1.1",
+    "@typescript-eslint/parser": "^4.1.1",
+    "eslint": "^7.9.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.0",
+    "prettier": "^2.1.2",
+    "typescript": "^4.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "yarn format:write",
+      "yarn lint:fix"
+    ]
+  }
+}
